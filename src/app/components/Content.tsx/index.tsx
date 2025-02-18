@@ -1,5 +1,4 @@
 import { JSX, useState } from 'react';
-import { useRouter } from 'next/navigation';
 import InputField from '../../components/InputField';
 import Button from '../../components/Button';
 import { FcGoogle } from 'react-icons/fc';
@@ -13,7 +12,6 @@ const Content = (): JSX.Element => {
     password?: string;
   }>({});
   const [message, setMessage] = useState<string>('');
-  const router = useRouter();
 
   const validate = (): boolean => {
     const tempErrors: { email?: string; password?: string } = {};
