@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dokan Portfolio
 
-## Getting Started
+This is a portfolio project for Dokan Front End Test. The project includes a responsive header, footer, and content components with animations using `framer-motion`.
 
-First, run the development server:
+## Features
+
+- Responsive Header with dropdown menu for mobile view
+- Responsive Footer with contact information and links
+- Content component
+- Animations using `framer-motion`
+
+## Installation
+
+To get started with this project, follow the steps below:
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/dokan-portfolio.git 
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd dokan-portfolio
+```
+
+3. Install the dependencies:
+
+```bash
+npm install
+```
+4. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open your browser and navigate to http://localhost:3000 to see the project in action.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project structure is as follows:
 
-## Learn More
+```markdown
+dokan-portfolio/
+├── public/
+│   ├── brandlogo.svg
+│   ├── envelope.svg
+│   ├── facebook.svg
+│   ├── instagram.svg
+│   ├── linkedin.svg
+│   ├── Logotype.svg
+│   ├── phone.svg
+│   ├── pin.svg
+│   ├── twitter.svg
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── Content.tsx
+│   │   │   ├── Footer/
+│   │   │   │   └── index.tsx
+│   │   │   ├── Header/
+│   │   │   │   └── index.tsx
+│   │   ├── pages/
+│   │   │   └── index.tsx
+│   ├── constant/
+│   │   └── index.ts
+├── README.md
+├── package.json
+├── tsconfig.json
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Components
+# Header
+The Header component includes a responsive navigation menu with a dropdown for mobile view. It uses framer-motion for animations.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Footer
+The Footer component includes contact information and links. It is responsive and adapts to different screen sizes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Content
+The Content component is a placeholder for the main content of the page.
 
-## Deploy on Vercel
+# Animations
+The project uses framer-motion for animations. The Header component includes animations for the dropdown menu, and the LoginPage component includes fade-in animations for the header, content, and footer.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# License
+This project is licensed under the MIT License.
