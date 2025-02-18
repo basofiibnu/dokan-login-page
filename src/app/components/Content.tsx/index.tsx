@@ -5,12 +5,14 @@ import Button from '../../components/Button';
 import { FcGoogle } from 'react-icons/fc';
 
 const Content = (): JSX.Element => {
+  const [isSuccess, setIsSuccess] = useState<boolean>(false);
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [errors, setErrors] = useState<{
     email?: string;
     password?: string;
   }>({});
+  const [message, setMessage] = useState<string>('');
   const router = useRouter();
 
   const validate = (): boolean => {
@@ -29,10 +31,16 @@ const Content = (): JSX.Element => {
     e: React.FormEvent<HTMLFormElement>
   ): void => {
     e.preventDefault();
+    setMessage('');
+    setIsSuccess(false);
     if (validate()) {
-      router.push('/dashboard');
+      setIsSuccess(true);
+      setMessage('Login Success');
+    } else {
+      setMessage('Login Error');
     }
   };
+
   return (
     <div className="flex-1 min-h-screen flex items-center justify-center">
       <div className="w-full justify-center h-full max-w-md space-y-6 p-8 flex flex-col gap-10">
@@ -68,6 +76,16 @@ const Content = (): JSX.Element => {
               className="w-full bg-[#030B53] hover:bg-[#033e53] transition-colors rounded-xl py-4 px-5 shadow-sm shadow-[#2E98A2] text-lg"
             />
           </form>
+          {isSuccess && message !== '' && (
+            <p className="text-green-500 text-md mt-3 text-center">
+              {message}
+            </p>
+          )}
+          {!isSuccess && message !== '' && (
+            <p className="text-red-500 text-md mt-3 text-center">
+              {message}
+            </p>
+          )}
           <div className="relative my-4 flex items-center justify-center">
             <p className="px-3 text-lg font-medium text-[#383838]">
               or
